@@ -1,30 +1,62 @@
-# cofre-fantasma
+<div align="center">
 
-> Manual definitivo para transformar hardware acessivel e descartavel em um cofre de Bitcoin 100% isolado da internet (Air-Gap).
+<img src="./public/og-cover.svg" width="100%" alt="Cofre Fantasma — LORD JUNNIOR" />
 
----
+# COFRE FANTASMA
 
-## Proposta
+**Meça o isolamento do seu assinador offline, gere entropia com o próprio gesto e veja o percurso de uma assinatura que nunca toca a rede.**
 
-Guardar patrimonio em corretoras ou computadores conectados a internet expoe seus fundos a invasores, malwares e riscos de apreensao. Carteiras de marca comerciais costumam ser caras, dependem de programas fechados e utilizam cabos USB que criam caminhos de ataque.
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=111)](https://react.dev/) [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=fff)](https://www.typescriptlang.org/) [![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite&logoColor=fff)](https://vite.dev/)
 
-O projeto **cofre-fantasma** ensina a montar seu proprio cofre fisico independente usando pecas acessiveis de prateleira, sem fios e sem internet:
+[Site oficial](https://lordjunnior.com.br/ferramentas/cofre-fantasma) · [Perfil GitHub](https://github.com/lordjunnior)
 
-* **Blindagem total (Air-Gap):** O aparelho nunca encosta em redes Wi-Fi, sinal de celular, Bluetooth ou cabo de dados. A troca de informacoes ocorre exclusivamente por leitura visual de codigos QR na tela e na camera.
-* **Amnesia operacional:** O sistema opera na memoria RAM volatil. Ao desligar a bateria ou cortar a energia, todos os dados da sessao somem na hora.
-* **Componentes neutros:** Montado com placas acessiveis de visao computacional, sem depender de fabricantes tradicionais de hardware wallets.
+</div>
 
 ---
 
-## Estrutura do Repositorio
+## Visão geral
 
-```text
-cofre-fantasma/
-├── README.md
-└── manuais/
-    ├── 01-isolamento-total-airgap.md
-    ├── 02-montagem-e-preparacao.md
-    ├── 03-criacao-de-chaves-com-dados.md
-    ├── 04-senhas-e-criptografia-local.md
-    ├── 05-divisao-matematica-da-semente.md
-    └── 06-backup-em-aco-e-recuperacao.md
+Meça o isolamento do seu assinador offline, gere entropia com o próprio gesto e veja o percurso de uma assinatura que nunca toca a rede.
+
+Este repositório contém uma versão independente da ferramenta publicada no Arsenal LORD JUNNIOR. A interface e os módulos locais necessários foram extraídos do projeto principal para permitir execução, auditoria e evolução separadas.
+
+## Executar localmente
+
+Requisitos: Node.js 20+ e npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Para validar a versão de produção:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Arquitetura
+
+- `src/App.tsx`: entrada independente da ferramenta.
+- `src/components/tools/screens/`: tela funcional e componentes diretamente necessários.
+- `src/components/tools/lib/` e `src/lib/`: motores e cálculos reutilizados pela tela, quando aplicável.
+- `src/styles.css`: tokens visuais e estilos compartilhados da família LORD JUNNIOR.
+
+## Privacidade e integrações
+
+A ferramenta preserva o fluxo de processamento implementado na tela de origem. Quando houver chamadas a serviços externos, elas devem ser avaliadas conforme o provedor e a ação executada; ausência de conta própria não significa ausência de tráfego externo. Não inclua chaves privadas, tokens ou credenciais no código do navegador.
+
+## Projeto de origem
+
+- Site: https://lordjunnior.com.br
+- Código-fonte principal: https://github.com/lordjunnior/Meu-site-atualizado
+- Ferramenta no site: `/ferramentas/cofre-fantasma`
+
+---
+
+**LORD JUNNIOR** — Inteligência, Geopolítica e Liberdade Digital.
+
+## Documentação complementar
+
+O material original do repositório foi preservado em `manuais/`. A versão anterior do README está arquivada em `docs/README-legacy.md`.
